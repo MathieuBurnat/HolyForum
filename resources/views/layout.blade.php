@@ -3,11 +3,9 @@
 
   @include("component/header")
 
-
+  
   <body>
-    <h1> Hello everyone ! </h1>
-    <!-- JavaScript -->
-
+    @yield ('content')
   </body>
 
     @include("component/footer")
