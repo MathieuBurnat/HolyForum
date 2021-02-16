@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/test', function () {
-    return view('test');
-});
-
 Route::resource('themes', ThemeController::class);
 Route::resource('roles', RoleController::class);
 Route::resource('references', ReferenceController::class);
