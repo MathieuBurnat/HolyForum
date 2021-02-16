@@ -13,10 +13,10 @@
               <a class="nav-link" href="{{ route('themes.index') }}">Thèmes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Références</a>
+              <a class="nav-link" href="{{ route('references.index') }}">Références</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Rôles</a>
+              <a class="nav-link" href="{{ route('roles.index') }}">Rôles</a>
             </li>
           </ul>
         </div>

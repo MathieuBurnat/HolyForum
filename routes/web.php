@@ -22,4 +22,6 @@ Route::get('/test', function () {
 });
 
 Route::resource('themes', ThemeController::class);
+Route::resource('roles', RoleController::class);
+Route::resource('references', ReferenceController::class);
 
