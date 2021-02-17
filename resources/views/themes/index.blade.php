@@ -1,5 +1,5 @@
 @extends ('layout')
 
 @section ('content')
-    <h1> Bienvenue dans la page d'accueil ! :D </h1>
+    <h1> Thèmes >:C  </h1>
 @endsection
