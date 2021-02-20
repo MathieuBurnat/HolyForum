@@ -10,13 +10,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="{{ route('themes.index') }}">Thèmes</a>
+              <a class="nav-link" href="{{ route('themes.index') }}">Gestion des Thèmes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('references.index') }}">Références</a>
+              <a class="nav-link" href="{{ route('references.index') }}">Gestion des Références</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('roles.index') }}">Rôles</a>
+              <a class="nav-link" href="{{ route('roles.index') }}">Gestion des Rôles</a>
             </li>
           </ul>
         </div>
