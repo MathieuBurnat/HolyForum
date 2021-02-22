@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section ('content')
-    <h1> Références 0:')  </h1>
+    <h1> Références 0:')  </h1><i class="fas fa-eye"></i>
     @forelse ($references as $reference)
         <div class="row text-center divtitle" data-id="{{$reference->id}}">
             <div class="col-2 text-right">
