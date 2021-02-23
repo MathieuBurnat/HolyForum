@@ -11,5 +11,6 @@
     @yield ('content')
   </body>
 
+    @include('flash-message')
     @include("component/footer")
 </html>

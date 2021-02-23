@@ -7,7 +7,7 @@
         <thead>
             <tr class="gradient">
                 <th>Description</th>
-                <th> </th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +19,7 @@
                     <td class="col-icons" style="float: right;">
                         <a href="{{ $reference->url }}"><i class="fas fa-link"></i></a>
                         <a href="{{ route('references.show', $reference->id) }}"><i class="fas fa-eye"></i></a>
-                        <a href="{{ route('references.show', $reference->id) }}"><i class="fas fa-edit"></i></a>
+                        <a href="{{ route('references.edit', $reference->id) }}"><i class="fas fa-edit"></i></a>
                     </th>
                 </tr>
             @empty
