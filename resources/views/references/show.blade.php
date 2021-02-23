@@ -19,7 +19,12 @@
     </tbody>
 </table>
 
-<a href="{{ route('references.edit',$reference->id) }}"    class="m-1 btn btn-primary">Modifier</a>
-<a href="{{ route('references.destroy',$reference->id) }}" class="m-1 btn btn-danger">Supprimer</a>
+<form action="{{ route('references.destroy', $reference->id) }}" method="post">
+    @method('DELETE')
+    @csrf
+   
+    <a href="{{ route('references.edit',$reference->id) }}" class="m-1 btn btn-primary">Modifier</a>
+    <button class="m-1 btn btn-danger">Supprimer </button>
+</form>
 
 @endsection

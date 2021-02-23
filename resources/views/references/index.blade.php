@@ -16,20 +16,18 @@
                     <td>
                         {{ $reference->description }}
                     </td>
-                    <td class="col-icons" class="w-100" style="text-align: right;">
+                    <td class="col-icons" class="w-100"  style="text-align: right;">
                         <a href="{{ $reference->url }}"><i class="fas fa-link"></i></a>
                         <a href="{{ route('references.show', $reference->id) }}"><i class="fas fa-eye"></i></a>
                         <a href="{{ route('references.edit', $reference->id) }}"><i class="fas fa-edit"></i></a>
                     </th>
                 </tr>
             @empty
-                <div>Aucunes références ont été trouvées >:C </div>
+                <div>Aucunes références n'ont été trouvées >:C </div>
             @endforelse
         </tbody>
-
     </table>
     <a href="{{ route('references.create') }}" class="m-1 btn btn-success">Créer une nouvelle référence</a>
-
 @endsection
 
 <style>
@@ -42,7 +40,7 @@ tr:hover {
 }
 
 .col-icons {
-    opacity: 1;
+    opacity: 0;
 }
 
 .gradient {
