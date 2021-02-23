@@ -28,7 +28,7 @@
         </tbody>
 
     </table>
-    <a href="{{ route('references.create') }}" class="m-1 btn btn-secondary">Créer une nouvelle référence</a>
+    <a href="{{ route('references.create') }}" class="m-1 btn btn-success">Créer une nouvelle référence</a>
 
 @endsection
 
