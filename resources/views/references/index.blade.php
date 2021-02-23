@@ -16,7 +16,7 @@
                     <td>
                         {{ $reference->description }}
                     </td>
-                    <td class="col-icons" style="float: right;">
+                    <td class="col-icons" class="w-100" style="text-align: right;">
                         <a href="{{ $reference->url }}"><i class="fas fa-link"></i></a>
                         <a href="{{ route('references.show', $reference->id) }}"><i class="fas fa-eye"></i></a>
                         <a href="{{ route('references.edit', $reference->id) }}"><i class="fas fa-edit"></i></a>
@@ -37,8 +37,12 @@ tr:hover > .col-icons {
     opacity: 1;
 }
 
+tr:hover {
+    background-color: #f1f1f1;
+}
+
 .col-icons {
-    opacity: 0;
+    opacity: 1;
 }
 
 .gradient {
