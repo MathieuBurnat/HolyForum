@@ -20,4 +20,5 @@ Route::get('/', function () {
 Route::resource('themes', ThemeController::class);
 Route::resource('roles', RoleController::class);
 Route::resource('references', ReferenceController::class);
+Route::resource('auth', AuthController::class);
 
