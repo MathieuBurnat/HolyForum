@@ -20,7 +20,7 @@
       </ul>
     </div>
 
-    <a class="navbar-brand text-primary" href="{{ route('auth.login') }}">Login</a>
+    <a class="navbar-brand text-primary" href="{{ route('login') }}">Login</a>
   </nav>
 </head>
 

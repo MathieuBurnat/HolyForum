@@ -20,5 +20,7 @@ Route::get('/', function () {
 Route::resource('themes', ThemeController::class);
 Route::resource('roles', RoleController::class);
 Route::resource('references', ReferenceController::class);
-Route::resource('auth', AuthController::class);
+
+//Route::resource('auth', AuthController::class); //This command actually bug because the route bellow has been manually created
+Route::get('login', 'AuthController@login')->name('login'); //Is is the best way to do that ?
 

@@ -1,1 +1,7 @@
-<h2> :3 </h2>
+
+
+@extends ('layout')
+
+@section ('content')
+    <h2> Welcome to the login section ! </h2>
+@endsection
