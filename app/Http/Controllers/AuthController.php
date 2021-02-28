@@ -31,12 +31,18 @@ class AuthController extends Controller
         //Check is the hashed password correspond.
             if (Hash::check($request->input('password'), $user->password)){
                 Auth::login($user);
-                return redirect(route('login'))->with("success","Vous êtes connecté !. ");
+                return redirect('/')->with("success","Vous êtes connecté !");
             }
             else
-                return redirect(route('login'))->with("error","Le mot de passe est faux. ");
+                return redirect(route('login'))->with("error","Le mot de passe est faux.");
         }else{
             return redirect(route('login'))->with("error","L'adresse mail n'existe pas.");
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/')->with("warning","Vous êtes correctement déconnecté !");
     }
 }

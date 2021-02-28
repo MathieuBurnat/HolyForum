@@ -19,8 +19,11 @@
         </li>
       </ul>
     </div>
-
-    <a class="navbar-brand text-primary" href="{{ route('login') }}">Login</a>
+    @if (!auth::check())
+      <a class="navbar-brand text-primary" href="{{ route('login') }}">Login</a>
+    @else
+      <a class="navbar-brand text-danger" href="{{ route('logout') }}">Logout</a>
+    @endif
   </nav>
 </head>
 
