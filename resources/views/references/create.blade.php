@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section ('content')
-<form action="{{ route('references.store') }}" method="post">
+<form action="{{ route('users.store') }}" method="post">
     @csrf
     <h3>Description</h3>
     <input type="text" class="form-control" name="description" placeholder="Description of the URL" required>
