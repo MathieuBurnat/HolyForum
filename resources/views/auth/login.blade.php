@@ -4,7 +4,7 @@
 
 @section ('content')
     <form class="w-50 mx-auto">
-        <h2> Welcome to the login section ! </h2>
+        <h2> Connection </h2>
         <div class="form-group">
           <label for="exampleInputEmail1">Adresse mail</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrer votre mail">
