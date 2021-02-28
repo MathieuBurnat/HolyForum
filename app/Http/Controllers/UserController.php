@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -40,7 +41,8 @@ class UserController extends Controller
         $User->last_name = $request->input('last-name');
         $User->pseudo = $request->input('pseudo');
         $User->email = $request->input('email');
-        $User->password = $request->input('password');
+        $User->password = Hash::make($request->password);
+        $User->remember_token = Str::random(60);
         $User->role_id = 2;
         $User->save();
         return redirect(route('login'))->with('success','Votre compte à correctement été créé');
