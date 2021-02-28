@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+
 
 Route::resource('themes', ThemeController::class);
 Route::resource('roles', RoleController::class);
@@ -28,6 +29,5 @@ Route::get('register', 'AuthController@register')->name('register'); //Is is the
 Route::get('connection', 'AuthController@connection')->name('connection'); //Is is the best way to do that ?
 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Auth::routes();
+//Route::get('/home', 'HomeController@index')->name('home');

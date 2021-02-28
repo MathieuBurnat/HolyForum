@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -30,14 +30,8 @@ class AuthController extends Controller
         if(!empty($user)){
         //Check is the hashed password correspond.
             if (Hash::check($request->input('password'), $user->password)){
-                $user = Auth::user();
-                $credentials = $request->only('email', 'password');
-
-                if (Auth::attempt($credentials)) {
-                    // Authentication passed...
-                    return redirect()->intended('dashboard');
-                }
-                //return redirect(route('login'))->with("success","Le mot de passe correspond. ");
+                Auth::login($user);
+                return redirect(route('login'))->with("success","Vous êtes connecté !. ");
             }
             else
                 return redirect(route('login'))->with("error","Le mot de passe est faux. ");
