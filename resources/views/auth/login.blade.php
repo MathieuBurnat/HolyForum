@@ -8,7 +8,6 @@
         <div class="form-group">
           <label for="exampleInputEmail1">Adresse mail</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrer votre mail">
-          <small id="emailHelp" class="form-text text-muted"> Sachez que nous n'utilisons aucunes de vos données à des fins Marketing. Notre  but premier est la sécurité de vos données. </small>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Mot de passe</label>
@@ -19,5 +18,8 @@
           <label class="form-check-label" for="exampleCheck1">Rester connecté</label>
         </div>
         <button type="submit" class="btn btn-primary">Se connecter</button>
+        <p class="font-weight-light p-3 mb-2 bg-light"> Vous n'avez pas de compte ? Enregistrez-vous <a href="{{ route('register') }}">ici</a>
+            !</p>
       </form>
+
 @endsection

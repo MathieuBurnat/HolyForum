@@ -23,4 +23,5 @@ Route::resource('references', ReferenceController::class);
 
 //Route::resource('auth', AuthController::class); //This command actually bug because the route bellow has been manually created
 Route::get('login', 'AuthController@login')->name('login'); //Is is the best way to do that ?
+Route::get('register', 'AuthController@register')->name('register'); //Is is the best way to do that ?
 

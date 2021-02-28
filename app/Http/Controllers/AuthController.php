@@ -12,4 +12,10 @@ class AuthController extends Controller
         $user = new User();
         return view ('auth.login')->with(compact('user'));
     }
+
+    public function register()
+    {
+        $user = new User();
+        return view ('auth.register')->with(compact('user'));
+    }
 }
