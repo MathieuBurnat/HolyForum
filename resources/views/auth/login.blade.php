@@ -3,7 +3,8 @@
 @extends ('layout')
 
 @section ('content')
-        <form class="w-50 mx-auto" action="{{ route('connection') }}" method="post">
+        <form class="w-50 mx-auto" action="{{ route('connection') }}" method="get">
+        
         @csrf
         <h2> Connection </h2>
         <div class="form-group">
@@ -18,9 +19,8 @@
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Rester connecté</label>
         </div>
-        <button type="submit" class="btn btn-primary">Se connecter</button>
+        <button class="btn btn-primary">Se connecter</button>
         <p class="font-weight-light p-3 mb-2 bg-light"> Vous n'avez pas de compte ? Enregistrez-vous <a href="{{ route('register') }}">ici</a>
             !</p>
       </form>
-
 @endsection
