@@ -8,17 +8,23 @@
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="{{ route('themes.index') }}">Gestion des Thèmes</a>
-        </li>
+        @if (auth::check())
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ route('themes.index') }}">Gestion des Thèmes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('references.index') }}">Gestion des Références</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('roles.index') }}">Gestion des Rôles</a>
+          </li>
+        @endif
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('references.index') }}">Gestion des Références</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('roles.index') }}">Gestion des Rôles</a>
+          <a class="nav-link" href="#">Divers</a>
         </li>
       </ul>
     </div>
+
     @if (!auth::check())
       <a class="navbar-brand text-primary" href="{{ route('login') }}">Login</a>
     @else
