@@ -27,3 +27,7 @@ Route::get('login', 'AuthController@login')->name('login'); //Is is the best way
 Route::get('register', 'AuthController@register')->name('register'); //Is is the best way to do that ?
 Route::get('connection', 'AuthController@connection')->name('connection'); //Is is the best way to do that ?
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
