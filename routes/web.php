@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', UserController::class);
 });
 
-//Route::resource('auth', AuthController::class); //This command actually bug because the route bellow has been manually created
-Route::get('login', 'AuthController@login')->name('login'); //Is is the best way to do that ?
-Route::get('register', 'AuthController@register')->name('register'); 
-Route::get('connection', 'AuthController@connection')->name('connection'); 
-Route::get('logout', 'AuthController@logout')->name('logout'); 
+Route::get('login', [AuthController::class, "login"])->name('login'); 
+Route::get('register', [AuthController::class, "register"])->name('register'); 
+Route::get('connection', [AuthController::class, "connection"])->name('connection'); 
+Route::get('logout', [AuthController::class, "logout"])->name('logout'); 
