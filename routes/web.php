@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ForumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,13 @@ Route::middleware('auth')->group(function () {
     Route::resource('roles', RoleController::class);
     Route::resource('references', ReferenceController::class);
     Route::resource('users', UserController::class);
+
+    Route::get('forum.themes', [ForumController::class, "showThemes"])->name('forum.themes'); 
 });
 
 Route::get('login', [AuthController::class, "login"])->name('login'); 
 Route::get('register', [AuthController::class, "register"])->name('register'); 
 Route::get('connection', [AuthController::class, "connection"])->name('connection'); 
 Route::get('logout', [AuthController::class, "logout"])->name('logout'); 
+
+Route::get('show-themes', [AuthController::class, "logout"])->name('logout'); 

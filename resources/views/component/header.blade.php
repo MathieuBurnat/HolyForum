@@ -10,6 +10,9 @@
       <ul class="navbar-nav">
         @if (auth::check())
           <li class="nav-item active">
+            <a class="nav-link" href="{{ route('forum.themes') }}">Forum</a>
+          </li>
+          <li class="nav-item active">
             <a class="nav-link" href="{{ route('themes.index') }}">Gestion des Thèmes</a>
           </li>
           <li class="nav-item">
