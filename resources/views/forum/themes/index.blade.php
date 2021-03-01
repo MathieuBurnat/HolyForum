@@ -8,6 +8,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Nom</th>
+            <th scope="col">Test</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,9 @@
             <td> {{ ($loop->index) + 1 }} </td>
             <td>
                 {{ $theme->name }}
+            </td>
+            <td> 
+                [ {{ $theme->topics->count() }} ]
             </td>
         </tr>
     @empty
