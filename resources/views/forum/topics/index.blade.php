@@ -7,19 +7,19 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Nom</th>
+            <th scope="col">Description</th>
             <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
-        @forelse ($themes as $theme)
+        @forelse ($topics as $topic)
         <tr>
             <td> {{ ($loop->index) + 1 }} </td>
             <td>
-                {{ $theme->name }}
+                {{ $topic->description }}
             </td>
             <td> 
-                <a href="{{ route('forum.topics') }}" class="btn btn-outline-secondary">{{ $theme->topics->count() }}</a>
+                <a href="{ route('topics.show',$topic->id) }}" class="btn btn-outline-secondary">{{ $topic->opinions->count() }}</a>
             </td>
         </tr>
     @empty

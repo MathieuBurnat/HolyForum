@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', UserController::class);
 
     Route::get('forum.themes', [ForumController::class, "showThemes"])->name('forum.themes'); 
+    Route::get('forum.topics', [ForumController::class, "showTopics"])->name('forum.topics'); 
 });
 
 Route::get('login', [AuthController::class, "login"])->name('login'); 
@@ -35,4 +36,3 @@ Route::get('register', [AuthController::class, "register"])->name('register');
 Route::get('connection', [AuthController::class, "connection"])->name('connection'); 
 Route::get('logout', [AuthController::class, "logout"])->name('logout'); 
 
-Route::get('show-themes', [AuthController::class, "logout"])->name('logout'); 
