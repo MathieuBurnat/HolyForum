@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section ('content')
-<h1> Liste des thèmes </h1>
+<h1> Liste des Topics </h1>
 
 <table class="table">
     <thead>
@@ -19,7 +19,7 @@
                 {{ $topic->description }}
             </td>
             <td> 
-                <a href="{ route('topics.show',$topic->id) }}" class="btn btn-outline-secondary">{{ $topic->opinions->count() }}</a>
+                <a href="{ route('topics.show',$topic->id) }}" class="btn btn-outline-secondary">{ $topics->opinions->count() }}</a>
             </td>
         </tr>
     @empty

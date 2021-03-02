@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', UserController::class);
 
     Route::get('forum.themes', [ForumController::class, "showThemes"])->name('forum.themes'); 
-    Route::get('forum.topics', [ForumController::class, "showTopics"])->name('forum.topics'); 
+    Route::get('forum.topics/{id}', [ForumController::class, "showTopics"])->name('forum.topics'); 
 });
 
 Route::get('login', [AuthController::class, "login"])->name('login'); 

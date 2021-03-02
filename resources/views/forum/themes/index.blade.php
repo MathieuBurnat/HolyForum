@@ -19,7 +19,7 @@
                 {{ $theme->name }}
             </td>
             <td> 
-                <a href="{{ route('forum.topics') }}" class="btn btn-outline-secondary">{{ $theme->topics->count() }}</a>
+                <a href="{{ route('forum.topics',$theme->id) }}" class="btn btn-outline-secondary">{{ $theme->topics->count() }}</a>
             </td>
         </tr>
     @empty

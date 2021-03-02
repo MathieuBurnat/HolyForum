@@ -15,10 +15,10 @@ class ForumController extends Controller
         return view('forum.themes.index')->with(compact('themes'));
     }
 
-    public function showTopics()
+    public function showTopics($id)
     {
-        //$topics = Topic::find($fk_theme);
-        $topics = Topic::all();
+        $topics = Topic::all()->where('theme_id', '=', $id);
+
         return view('forum.topics.index')->with(compact('topics'));
     }
 }
