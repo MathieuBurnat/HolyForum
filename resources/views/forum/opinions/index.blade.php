@@ -1,21 +1,6 @@
 @extends ('layout')
 
 @section ('content')
-
-<p>
-    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Link with href
-    </a>
-    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Button with data-bs-target
-    </button>
-</p>
-<div class="collapse" id="collapseExample">
-    <div class="card card-body">
-        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-    </div>
-</div>
-
     <h1> << [{{ $topic->user->pseudo }}] {{ $topic->description }} >> </h1>
 
     @forelse ($opinions as $opinion)
@@ -23,7 +8,16 @@
             <h4 class="card-header"> #{{ ($loop->index) + 1 }} {{ $opinion->user->pseudo }} </h4>
             <div class="card-body">
                 <h5 class="card-title">{{ $opinion->description }}</h5>
-                <a href="#" class="btn btn-outline-secondary">Répondre</a>
+                <p>
+                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Répondre
+                    </button>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                    </div>
+                </div>
         </div>
 
         @foreach ($opinion->comments as $comment)
