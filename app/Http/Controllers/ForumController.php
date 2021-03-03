@@ -27,10 +27,10 @@ class ForumController extends Controller
 
     public function showOpinions($id)
     {
-        $topics = Theme::find($id);
+        $topic = Theme::find($id);
 
         $opinions = Opinion::all()->where('topic_id', '=', $id);
 
-        return view('forum.opinions.index')->with(compact('opinions', 'topics'));
+        return view('forum.opinions.index')->with(compact('opinions', 'topic'));
     }
 }

@@ -7,6 +7,7 @@
     <thead>
         <tr>
             <th scope="col">#</th>
+            <th scope="col">Pseudo</th>
             <th scope="col">Description</th>
             <th scope="col"></th>
         </tr>
@@ -15,12 +16,16 @@
         @forelse ($opinions as $opinion)
         <tr>
             <td> {{ ($loop->index) + 1 }} </td>
+            <td>  {{ $opinion->user->pseudo }}</td>
             <td>
                 {{ $opinion->description }}
             </td>
             <td> 
                 <a href="{ route('forum.topics',$opinion->id) }}" class="btn btn-outline-secondary">0</a>
             </td>
+            @foreach ($opinion->comments as $comment)
+                <td> {{ $comment->pseudo }}: {{ $comment->pivot->comment }}, {{ $comment->pivot->points }}pts</td>
+            @endforeach
         </tr>
     @empty
         <div>Aucunes références n'ont été trouvées >:C </div>
