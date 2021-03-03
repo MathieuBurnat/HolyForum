@@ -27,7 +27,7 @@ class ForumController extends Controller
 
     public function showOpinions($id)
     {
-        $topic = Theme::find($id);
+        $topic = Topic::find($id);
 
         $opinions = Opinion::all()->where('topic_id', '=', $id);
 

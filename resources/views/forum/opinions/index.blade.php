@@ -1,36 +1,18 @@
 @extends ('layout')
 
 @section ('content')
-<h1> Liste des thèmes </h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Pseudo</th>
-            <th scope="col">Description</th>
-            <th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
-        @forelse ($opinions as $opinion)
-        <tr>
-            <td> {{ ($loop->index) + 1 }} </td>
-            <td>  {{ $opinion->user->pseudo }}</td>
-            <td>
-                {{ $opinion->description }}
-            </td>
-            <td> 
-                <a href="{ route('forum.topics',$opinion->id) }}" class="btn btn-outline-secondary">0</a>
-            </td>
-            @foreach ($opinion->comments as $comment)
-                <td> {{ $comment->pseudo }}: {{ $comment->pivot->comment }}, {{ $comment->pivot->points }}pts</td>
-            @endforeach
-        </tr>
+    <h1> << [{{ $topic->user->pseudo }}] {{ $topic->description }} >> </h1>
+
+    @forelse ($opinions as $opinion)
+        <h2> *{{ ($loop->index) + 1 }}* [{{ $opinion->user->pseudo }}] </h2>
+        <h3> {{ $opinion->description }} </h3>
+        @foreach ($opinion->comments as $comment)
+        <h5> {{ $comment->pseudo }}: {{ $comment->pivot->comment }}, {{ $comment->pivot->points }}pts</h5>
+        @endforeach
     @empty
-        <div>Aucunes références n'ont été trouvées >:C </div>
+        <div>Aucunes opiniond n'ont été trouvées >:C </div>
     @endforelse
-    </tbody>
-</table>
 
 @endsection
+
