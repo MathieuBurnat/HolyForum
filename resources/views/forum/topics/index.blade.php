@@ -23,7 +23,7 @@
             </td>
         </tr>
     @empty
-        <div>Aucunes références n'ont été trouvées >:C </div>
+        <div>Aucun topic n'a été trouvé >:C </div>
     @endforelse
     </tbody>
 </table>
