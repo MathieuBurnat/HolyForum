@@ -9,7 +9,7 @@
             <h4 class="card-header"> #{{ ($loop->index) + 1 }} {{ $opinion->user->pseudo }} </h4>
             <div class="card-body">
                 <h5 class="card-title">{{ $opinion->description }}</h5>
-                <a href="#" class="btn btn-primary">Répondre</a>
+                <a href="#" class="btn btn-outline-secondary">Répondre</a>
         </div>
 
         @foreach ($opinion->comments as $comment)
@@ -21,7 +21,7 @@
             </div>
         @endforeach
     @empty
-        <div>Aucunes opiniond n'ont été trouvées >:C </div>
+        <div>Aucunes opinions n'ont été trouvées >:C </div>
     @endforelse
 
 
