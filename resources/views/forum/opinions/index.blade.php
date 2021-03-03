@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section ('content')
-<h1> Liste des Topics avec comme thème : {{ $theme->name }}</h1>
+<h1> Liste des thèmes </h1>
 
 <table class="table">
     <thead>
@@ -12,14 +12,14 @@
         </tr>
     </thead>
     <tbody>
-        @forelse ($topics as $topic)
+        @forelse ($opinions as $opinion)
         <tr>
             <td> {{ ($loop->index) + 1 }} </td>
             <td>
-                {{ $topic->description }}
+                {{ $opinion->description }}
             </td>
             <td> 
-                <a href="{{ route('forum.opinions',$topic->id) }}" class="btn btn-outline-secondary">{{ $topic->opinions->count() }}</a>
+                <a href="{ route('forum.topics',$opinion->id) }}" class="btn btn-outline-secondary">0</a>
             </td>
         </tr>
     @empty
