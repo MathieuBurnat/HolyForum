@@ -1,4 +1,4 @@
-<form action="{{ route('forum.newOpinion') }}" method="post">
+<form action="{{ route('opinions.store') }}" method="post">
     @csrf
     <h6>Commentaire</h6>
     <textarea class="form-control" name="newcomm"></textarea>

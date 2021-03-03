@@ -26,6 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('roles', RoleController::class);
     Route::resource('references', ReferenceController::class);
     Route::resource('users', UserController::class);
+    Route::resource('opinions', OpinionController::class);
 
     Route::get('forum.themes', [ForumController::class, "showThemes"])->name('forum.themes'); 
     Route::get('forum.topics/{id}', [ForumController::class, "showTopics"])->name('forum.topics'); 

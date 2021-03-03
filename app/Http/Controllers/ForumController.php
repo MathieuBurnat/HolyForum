@@ -34,11 +34,4 @@ class ForumController extends Controller
 
         return view('forum.opinions.index')->with(compact('opinions', 'topic'));
     }
-
-    public function newOpinion($request)
-    {
-        /*$opinion = Opinion::find($request->input('opinion'));
-        $opinion->comments()->attach(Auth::user(),['comment' => $request->input('newcomm'),'points' => $request->input('points')]);
-        return redirect(route('forum.opinions',$opinion->topic))->with('success','Commentaire enregistré');*/
-    }
 }
