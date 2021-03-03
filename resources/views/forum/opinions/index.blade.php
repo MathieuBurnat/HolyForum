@@ -10,14 +10,13 @@
         </div>
       </div>
 
-
     @forelse ($opinions as $opinion)
         <div class="card">
-            <h4 class="card-header"> #{{ ($loop->index) + 1 }} {{ $opinion->user->pseudo }} </h4>
+            <h5 class="card-header">  {{ $opinion->user->pseudo }} </h5>
             <div class="card-body">
-                <h5 class="card-title">{{ $opinion->description }}</h5>
+                <h6 class="card-title">{{ $opinion->description }}</h6>
                 <p>
-                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCard{{ ($loop->index) + 1 }}" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-outline-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCard{{ ($loop->index) + 1 }}" aria-expanded="false" aria-controls="collapseExample">
                         Répondre
                     </button>
                 </p>
@@ -29,8 +28,8 @@
         </div>
 
         @foreach ($opinion->comments as $comment)
-            <div class="card" style="margin-left: 1em">
-                <h6 class="card-header"> {{ $comment->pseudo }} </h6>
+            <div class="card m-2">
+                <h6 class="card-header"> #{{ ($loop->index) + 1 }} {{ $comment->pseudo }} </h6>
                 <div class="card-body">
                     <p class="card-text">{{ $comment->pivot->comment }} {{ $comment->pivot->points }}pts</p>
                 </div>
