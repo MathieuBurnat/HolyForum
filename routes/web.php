@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('forum.themes', [ForumController::class, "showThemes"])->name('forum.themes'); 
     Route::get('forum.topics/{id}', [ForumController::class, "showTopics"])->name('forum.topics'); 
     Route::get('forum.opinions/{id}', [ForumController::class, "showOpinions"])->name('forum.opinions'); 
+    Route::post('forum.newOpinion', [ForumController::class, "newOpinion"])->name('forum.newOpinion'); 
 });
 
 Route::get('login', [AuthController::class, "login"])->name('login'); 

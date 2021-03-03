@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Theme;
 use App\Models\Topic;
 use App\Models\Opinion;
+use App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 
@@ -32,5 +33,12 @@ class ForumController extends Controller
         $opinions = Opinion::all()->where('topic_id', '=', $id);
 
         return view('forum.opinions.index')->with(compact('opinions', 'topic'));
+    }
+
+    public function newOpinion($request)
+    {
+        /*$opinion = Opinion::find($request->input('opinion'));
+        $opinion->comments()->attach(Auth::user(),['comment' => $request->input('newcomm'),'points' => $request->input('points')]);
+        return redirect(route('forum.opinions',$opinion->topic))->with('success','Commentaire enregistré');*/
     }
 }
