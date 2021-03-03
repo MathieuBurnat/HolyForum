@@ -19,7 +19,7 @@
                 {{ $topic->description }}
             </td>
             <td> 
-                <a href="{ route('topics.show',$topic->id) }}" class="btn btn-outline-secondary">{ $topics->opinions->count() }}</a>
+                <a href="{ route('topics.show',$topic->id) }}" class="btn btn-outline-secondary">{{ $topic->opinions->count() }}</a>
             </td>
         </tr>
     @empty
