@@ -15,7 +15,7 @@
                 </p>
                 <div class="collapse" id="collapseCard{{ ($loop->index) + 1 }}">
                     <div class="card card-body">
-                        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        @include('forum.opinions.newComment')
                     </div>
                 </div>
         </div>
@@ -31,8 +31,5 @@
     @empty
         <div>Aucunes opinions n'ont été trouvées >:C </div>
     @endforelse
-
-
-
 @endsection
 
