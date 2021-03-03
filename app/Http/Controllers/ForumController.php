@@ -17,8 +17,10 @@ class ForumController extends Controller
 
     public function showTopics($id)
     {
+        $theme = Theme::find($id);
+
         $topics = Topic::all()->where('theme_id', '=', $id);
 
-        return view('forum.topics.index')->with(compact('topics'));
+        return view('forum.topics.index')->with(compact('topics', 'theme'));
     }
 }

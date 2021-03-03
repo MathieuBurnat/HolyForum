@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section ('content')
-<h1> Liste des Topics </h1>
+<h1> Liste des Topics avec comme thème : {{ $theme->name }}</h1>
 
 <table class="table">
     <thead>
