@@ -1,7 +1,15 @@
 @extends ('layout')
 
 @section ('content')
-    <h1> << [{{ $topic->user->pseudo }}] {{ $topic->description }} >> </h1>
+    <div class="card">
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <h1> "{{ $topic->description }}" </h1>
+            <footer class="blockquote-footer p-2">Créé par <cite title="Source Title"> {{ $topic->user->pseudo }} </cite></footer>
+          </blockquote>
+        </div>
+      </div>
+
 
     @forelse ($opinions as $opinion)
         <div class="card">
