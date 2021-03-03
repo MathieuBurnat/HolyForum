@@ -9,11 +9,11 @@
             <div class="card-body">
                 <h5 class="card-title">{{ $opinion->description }}</h5>
                 <p>
-                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCard{{ ($loop->index) + 1 }}" aria-expanded="false" aria-controls="collapseExample">
                         Répondre
                     </button>
                 </p>
-                <div class="collapse" id="collapseExample">
+                <div class="collapse" id="collapseCard{{ ($loop->index) + 1 }}">
                     <div class="card card-body">
                         Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
                     </div>
