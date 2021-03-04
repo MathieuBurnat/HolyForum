@@ -25,7 +25,21 @@
     @empty
         <div>Aucun topic n'a été trouvé >:C </div>
     @endforelse
+
     </tbody>
 </table>
+
+<p>
+    <button class="btn btn-outline-info m-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCard" aria-expanded="false" aria-controls="collapseExample">
+        Nouveau Topic
+    </button>
+</p>
+
+
+<div class="collapse" id="collapseCard">
+    <div class="card card-body">
+        @include("forum.topics.newTopic")
+    </div>
+</div>
 
 @endsection
