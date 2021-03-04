@@ -16,8 +16,9 @@ class IsUserAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::User()->isAdmin()) {
-            dd("I'm sorry but you aren't connected as Admin ! >:C ");
+        
+        if ((!Auth::check()) || (!Auth::user()->isAdmin())) {
+            return redirect('not-admin');
         }
 
         return $next($request);

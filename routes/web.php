@@ -46,3 +46,6 @@ Route::get('register', [AuthController::class, "register"])->name('register');
 Route::get('connection', [AuthController::class, "connection"])->name('connection'); 
 Route::get('logout', [AuthController::class, "logout"])->name('logout'); 
 
+//Errors
+Route::get('not-admin', [AuthController::class, "notAdmin"])->name('not-admin'); 
+
