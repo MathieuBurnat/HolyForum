@@ -6,5 +6,4 @@
             <h2 class="text-danger"> Erreur : Privilège Administrateur</h2>
             Il semblerait que vous ne possédiez pas les droits suffisants pour accéder à cette page.
         </div>
-
 @endsection
