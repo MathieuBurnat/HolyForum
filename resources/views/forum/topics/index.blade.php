@@ -29,7 +29,7 @@
     </tbody>
 </table>
 @else
-<div class="p-3 mb-2 bg-light text-dark"> Aucuns thèmes n'existent actuellement. :'c </div>
+<div class="p-3 mb-2 bg-light text-dark"> Aucuns topics n'existent actuellement. :'c </div>
 @endif
 
 <p>
