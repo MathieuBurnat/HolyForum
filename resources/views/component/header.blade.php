@@ -27,7 +27,14 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Divers</a>
         </li>
-      
+      </ul>
+
+    </div>
+
+    <div class="collapse navbar-collapse navbar-right" id="navbarNavDropdown" style="position: absolute; right: 0px; padding:3em;">
+      <!--a class="navbar-brand text-primary" href="{ route('login') }}">Login</a-->
+
+      <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown link
@@ -46,9 +53,9 @@
 
     @if (!auth::check())
 
-      <a class="navbar-brand text-primary" href="{{ route('login') }}">Login</a>
+      <!--a class="navbar-brand text-primary" href="{ route('login') }}">Login</a-->
     @else
-      <a class="navbar-brand text-danger" href="{{ route('logout') }}">Logout</a>
+      <!--a class="navbar-brand text-danger" href="{ route('logout') }}">Logout</a-->
     @endif
   </nav>
 </head>
