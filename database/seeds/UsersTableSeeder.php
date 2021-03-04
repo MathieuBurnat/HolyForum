@@ -149,6 +149,16 @@ class UsersTableSeeder extends Seeder
                 'password' => Hash::make('Pa$$w0rd'),
                 'role_id' => 2,
             ),
+            13 =>
+            array (
+                'id' => 16,
+                'first_name' => 'Mathieu',
+                'last_name' => 'Burnat',
+                'pseudo' => 'DevMath',
+                'email' => 'Mathieu.Burnat@gmail.com',
+                'password' => Hash::make('123'),
+                'role_id' => 2,
+            ),
         ));
 
 
