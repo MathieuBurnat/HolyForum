@@ -23,10 +23,6 @@ Route::get('/', [HomeController::class, "index"])->name('/');
 
 //Need to be connected
 Route::middleware('auth')->group(function () {
-    Route::resource('themes', ThemeController::class);
-    Route::resource('roles', RoleController::class);
-    Route::resource('references', ReferenceController::class);
-    Route::resource('users', UserController::class);
     Route::resource('opinions', OpinionController::class);
 
     Route::get('forum.themes', [ForumController::class, "showThemes"])->name('forum.themes'); 
@@ -34,6 +30,15 @@ Route::middleware('auth')->group(function () {
     Route::get('forum.opinions/{id}', [ForumController::class, "showOpinions"])->name('forum.opinions'); 
     Route::post('forum.newOpinion', [ForumController::class, "newOpinion"])->name('forum.newOpinion'); 
 });
+
+//Need to be admin
+Route::middleware('isUserAdmin')->group(function () {
+    Route::resource('themes', ThemeController::class);
+    Route::resource('roles', RoleController::class);
+    Route::resource('references', ReferenceController::class);
+    Route::resource('users', UserController::class);
+});
+
 
 //Authentification management
 Route::get('login', [AuthController::class, "login"])->name('login'); 
