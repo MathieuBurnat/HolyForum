@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,10 @@ use App\Http\Controllers\ForumController;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('homepage');
-});
+//Public route
+Route::get('/', [HomeController::class, "index"])->name('/'); 
 
+//Need to be connected
 Route::middleware('auth')->group(function () {
     Route::resource('themes', ThemeController::class);
     Route::resource('roles', RoleController::class);
@@ -34,6 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::post('forum.newOpinion', [ForumController::class, "newOpinion"])->name('forum.newOpinion'); 
 });
 
+//Authentification management
 Route::get('login', [AuthController::class, "login"])->name('login'); 
 Route::get('register', [AuthController::class, "register"])->name('register'); 
 Route::get('connection', [AuthController::class, "connection"])->name('connection'); 

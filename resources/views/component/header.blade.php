@@ -8,7 +8,7 @@
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        @if (auth::check())
+        @if (Auth::check())
           <li class="nav-item active">
             <a class="nav-link" href="{{ route('forum.themes') }}">Forum</a>
           </li>
