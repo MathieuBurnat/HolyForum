@@ -54,7 +54,7 @@
                 @endswitch
               <!--a class="dropdown-item" href="#">Informations</a-->
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item " href="#"> <h6>Options</h6></a>
+              <a class="dropdown-item" href="#"> <h6>Options</h6></a>
               <a class="dropdown-item text-danger" href="{{ route('logout') }}">Logout</a>
             </div>
           </li>
