@@ -11,7 +11,7 @@ class SetAdmin extends Command
      *
      * @var string
      */
-    protected $signature = 'command:setAdmin';
+    protected $signature = 'command:setAdmin{test}';
 
     /**
      * The console command description.
@@ -35,10 +35,10 @@ class SetAdmin extends Command
      *
      * @return int
      */
-    public function handle($test)
+    public function handle()
     {
         $this->info('Display this on the screen');
-        $this->info($test);
+        $this->info($this->argument('test'));
 
         return 0;
     }
