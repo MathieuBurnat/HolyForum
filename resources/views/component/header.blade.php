@@ -33,25 +33,29 @@
 
     <div class="collapse navbar-collapse navbar-right" id="navbarNavDropdown" style="position: absolute; right: 0px; padding:3em;">
       <!--a class="navbar-brand text-primary" href="{ route('login') }}">Login</a-->
-
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-      </ul>
+      @if (auth::check())
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Mon compte
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item text-danger" href="{{ route('logout') }}">Logout</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+      @else
+        <a class="navbar-brand text-primary" href="{{ route('login') }}">Login</a>
+      @endif
+      
     </div>
 
 
 
-    @if (!auth::check())
+    @if (auth::check())
 
       <!--a class="navbar-brand text-primary" href="{ route('login') }}">Login</a-->
     @else
