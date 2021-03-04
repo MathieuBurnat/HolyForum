@@ -12,23 +12,40 @@
           <li class="nav-item active">
             <a class="nav-link" href="{{ route('forum.themes') }}">Forum</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ route('themes.index') }}">Gestion des Thèmes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('references.index') }}">Gestion des Références</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('roles.index') }}">Gestion des Rôles</a>
-          </li>
+          @if(Auth::User()->isAdmin())
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ route('themes.index') }}">Gestion des Thèmes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('references.index') }}">Gestion des Références</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('roles.index') }}">Gestion des Rôles</a>
+            </li>
+          @endif
         @endif
         <li class="nav-item">
           <a class="nav-link" href="#">Divers</a>
         </li>
+      
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown link
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
       </ul>
     </div>
 
+
+
     @if (!auth::check())
+
       <a class="navbar-brand text-primary" href="{{ route('login') }}">Login</a>
     @else
       <a class="navbar-brand text-danger" href="{{ route('logout') }}">Logout</a>
