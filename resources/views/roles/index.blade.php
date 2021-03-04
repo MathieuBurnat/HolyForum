@@ -1,5 +1,5 @@
 @extends ('layout')
 
 @section ('content')
-    <h1> Rôles ^w^  </h1>
+    <h1> Gestion des rôles ^w^  </h1>
 @endsection

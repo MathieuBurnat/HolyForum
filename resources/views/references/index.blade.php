@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section ('content')
-    <h1> Références 0:') </h1>
+    <h1> Gestion des références 0:') </h1>
 
     <table style="width: 50%">
         <thead>

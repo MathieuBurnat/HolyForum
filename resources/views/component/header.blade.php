@@ -60,7 +60,7 @@
           </li>
         </ul>
       @else
-        <a class="navbar-brand" href="{{ route('login') }}">Login</a>
+        <a class="navbar-brand text-primary" href="{{ route('login') }}">Login</a>
       @endif
       
     </div>
