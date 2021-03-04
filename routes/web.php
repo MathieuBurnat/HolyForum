@@ -24,7 +24,8 @@ Route::get('/', [HomeController::class, "index"])->name('/');
 //Need to be connected
 Route::middleware('auth')->group(function () {
     Route::resource('opinions', OpinionController::class);
-
+    Route::resource('topics', TopicController::class);
+    
     Route::get('forum.themes', [ForumController::class, "showThemes"])->name('forum.themes'); 
     Route::get('forum.topics/{id}', [ForumController::class, "showTopics"])->name('forum.topics'); 
     Route::get('forum.opinions/{id}', [ForumController::class, "showOpinions"])->name('forum.opinions'); 
