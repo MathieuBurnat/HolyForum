@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,15 +18,11 @@ use App\Http\Controllers\ForumController;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('homepage');
-});
+//Public route
+Route::get('/', [HomeController::class, "index"])->name('/'); 
 
+//Need to be connected
 Route::middleware('auth')->group(function () {
-    Route::resource('themes', ThemeController::class);
-    Route::resource('roles', RoleController::class);
-    Route::resource('references', ReferenceController::class);
-    Route::resource('users', UserController::class);
     Route::resource('opinions', OpinionController::class);
 
     Route::get('forum.themes', [ForumController::class, "showThemes"])->name('forum.themes'); 
@@ -34,8 +31,21 @@ Route::middleware('auth')->group(function () {
     Route::post('forum.newOpinion', [ForumController::class, "newOpinion"])->name('forum.newOpinion'); 
 });
 
+//Need to be admin
+Route::middleware('isUserAdmin')->group(function () {
+    Route::resource('themes', ThemeController::class);
+    Route::resource('roles', RoleController::class);
+    Route::resource('references', ReferenceController::class);
+    Route::resource('users', UserController::class);
+});
+
+
+//Authentification management
 Route::get('login', [AuthController::class, "login"])->name('login'); 
 Route::get('register', [AuthController::class, "register"])->name('register'); 
 Route::get('connection', [AuthController::class, "connection"])->name('connection'); 
 Route::get('logout', [AuthController::class, "logout"])->name('logout'); 
+
+//Errors
+Route::get('not-admin', [AuthController::class, "notAdmin"])->name('not-admin'); 
 

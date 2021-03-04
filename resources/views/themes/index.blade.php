@@ -1,5 +1,5 @@
 @extends ('layout')
 
 @section ('content')
-    <h1> Thèmes >:C  </h1>
+    <h1> Gestion des thèmes >:C  </h1>
 @endsection

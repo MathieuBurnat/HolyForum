@@ -45,4 +45,9 @@ class AuthController extends Controller
         Auth::logout();
         return redirect('/')->with("warning","Vous êtes correctement déconnecté !");
     }
+
+    public function notAdmin()
+    {
+        return view ('errors.not-admin');
+    }
 }
