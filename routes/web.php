@@ -20,6 +20,7 @@ Auth::routes();
 
 //Public route
 Route::get('/', [HomeController::class, "index"])->name('/'); 
+Route::view('/divers', 'divers.index');
 
 //Need to be connected
 Route::middleware('auth')->group(function () {
