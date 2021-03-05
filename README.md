@@ -3,7 +3,8 @@
 1) Install the project
 a) Composer i
 b) npm i
-c) npm run dev
+c) npm i --save @fortawesome/fontawesome-free
+d) npm run dev
 
 2) Configure your .env file
 A) Copy .env.example to .env
@@ -22,5 +23,3 @@ php artisan migrate:fresh --seed
 php artisan serve
 
 6) Have Fun !
-
-npm i --save @fortawesome/fontawesome-free
