@@ -25,7 +25,7 @@
           @endif
         @endif
         <li class="nav-item">
-          <a class="nav-link" href="#">Divers</a>
+          <a class="nav-link" href="{{ url('divers') }}">Divers</a>
         </li>
       </ul>
 
