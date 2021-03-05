@@ -1,25 +1,30 @@
 # Holy Forum
 
-1) Install the project
-a) Composer i
-b) npm i
-c) npm i --save @fortawesome/fontawesome-free
-d) npm run dev
+## Install the project
+1) Composer i
+2) npm i
+3) npm i --save @fortawesome/fontawesome-free
+4) npm run dev
 
-2) Configure your .env file
-A) Copy .env.example to .env
-B) Configure your db's driver
-
-3) Generate your key
+## Configure your .env file
+1) Copy .env.example to .env
+2) Generate your key
+```cmd
 php artisan key:generate
+```
+3) Configure your db's driver into the .env file for the next section.
 
-4) Database 
-A) create the databse
-The default db name is : holy-forum
-B) Fill the databse
+## Local Database
+
+1) create the databse
+>The default name is : holy-forum
+2) Fill the databse
+```cmd
 php artisan migrate:fresh --seed
+```
 
-5) Execute the website
-php artisan serve
-
-6) Have Fun !
+## Execute the website
+```cmd
+ php artisan serve
+```
+Finally. Have Fun !
