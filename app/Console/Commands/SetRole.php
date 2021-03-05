@@ -6,21 +6,21 @@ use App\Models\Role;
 
 use Illuminate\Console\Command;
 
-class SetAdmin extends Command
+class SetRole extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'command:setAdmin{pseudo}';
+    protected $signature = 'command:setRole{pseudo}{slug}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Give the admin privileges to a user';
+    protected $description = 'set a role to a user.';
 
     /**
      * Create a new command instance.
@@ -41,9 +41,7 @@ class SetAdmin extends Command
     {
         //Get variable
         $pseudo = $this->argument('pseudo');
-
-        //Get admin's slug
-        $slug = Role::where('slug', "ADMI")->first();
+        $slug   = $this->argument('slug');
 
         $this->info('== Grant a user the administrator privileges ==');
 
@@ -54,6 +52,10 @@ class SetAdmin extends Command
         $user = User::where('pseudo', $pseudo)->first();
         if ($user === null) 
             $this->line('<fg=red> Error : The pseudo doesn\'t exist. ');
+
+        $slug = Role::where('slug', $slug)->first();
+        if ($slug === null)
+            $this->line('<fg=red> Error : The slug doesn\'t exist. ');
 
         $user->role_id = $slug->id;
         
