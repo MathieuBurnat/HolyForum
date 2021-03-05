@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Console\Commands;
+use App\Models\User;
+use App\Models\Role;
 
 use Illuminate\Console\Command;
 
@@ -11,7 +13,7 @@ class SetAdmin extends Command
      *
      * @var string
      */
-    protected $signature = 'command:setAdmin{test}';
+    protected $signature = 'command:setAdmin{pseudo}{slug}';
 
     /**
      * The console command description.
@@ -37,8 +39,29 @@ class SetAdmin extends Command
      */
     public function handle()
     {
-        $this->info('Display this on the screen');
-        $this->info($this->argument('test'));
+        //Get variable
+        $pseudo = $this->argument('pseudo');
+        $slug   = $this->argument('slug');
+
+        $this->info('== Grant a user the administrator privileges ==');
+
+        $this->info("Pseudo : " . $pseudo);
+        $this->info("Role's SLUG : " . $slug);
+
+        //If the pseudo
+        $user = User::where('pseudo', $pseudo)->first();
+        if ($user === null) 
+            $this->line('<fg=red> Error : The pseudo doesn\'t exist. ');
+
+        $slug = Role::where('slug', $slug)->first();
+        if ($slug === null)
+            $this->line('<fg=red> Error : The slug doesn\'t exist. ');
+
+        $user->role_id = $slug->id;
+        
+        $user->save();
+
+        $this->info("Done !");
 
         return 0;
     }
