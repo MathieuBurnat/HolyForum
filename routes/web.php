@@ -21,6 +21,11 @@ Auth::routes();
 //Public route
 Route::get('/', [HomeController::class, "index"])->name('/'); 
 
+Route::get('/divers', function () {
+    return "hello world";
+    //return redirect('divers.index');
+});
+
 //Need to be connected
 Route::middleware('auth')->group(function () {
     Route::resource('opinions', OpinionController::class);
