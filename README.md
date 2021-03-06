@@ -28,3 +28,27 @@ php artisan migrate:fresh --seed
  php artisan serve
 ```
 Finally. Have Fun !
+
+# Commands
+This project has laravel commands.
+
+## Set a user admin
+Need the pseudo of the user.
+
+```cmd
+php artisan command:setadmin("myPseudo")
+```
+
+## Set a specific role to a user 
+Need the pseudo of the user and the role's slug
+```cmd
+php artisan command:setrole("myPseudo", "PROF")
+```
+*Note : You have to chose the correct SLUG bellow.*
+
+### Slugs
+| Role Name        | SLUG           | 
+| ------------- |:-------------:| 
+| Studient      | *STUD* | 
+| Teacher    | *PROF*      | 
+| Administrator | *ADMI*      | 
