@@ -13,7 +13,7 @@ class SetAdmin extends Command
      *
      * @var string
      */
-    protected $signature = 'command:setAdmin{pseudo}';
+    protected $signature = 'command:setadmin{pseudo}';
 
     /**
      * The console command description.

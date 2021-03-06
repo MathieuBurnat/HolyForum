@@ -13,7 +13,7 @@ class SetRole extends Command
      *
      * @var string
      */
-    protected $signature = 'command:setRole{pseudo}{slug}';
+    protected $signature = 'command:setrole{pseudo}{slug}';
 
     /**
      * The console command description.
